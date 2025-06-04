@@ -2,135 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>£700 Holiday Voucher</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bird Canvas Demo</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #ff00cc 0%, #3333ff 100%);
-      color: #fff700;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    body { margin: 0; padding: 0; }
+    #contact-bg-wrapper {
+      position: relative;
+      left: 50%;
+      width: 100vw;
+      min-height: 600px;
+      margin-left: -50vw;
+      background: #b7b0e3;
       overflow: hidden;
     }
-    .voucher-container {
-      background: repeating-linear-gradient(
-        45deg,
-        #fffb00,
-        #fffb00 20px,
-        #ff00cc 20px,
-        #ff00cc 40px
-      );
-      border: 8px dashed #00ffea;
-      border-radius: 32px;
-      padding: 50px 40px;
-      box-shadow: 0 0 40px 10px #00ffea, 0 0 10px 2px #ff00cc inset;
-      max-width: 500px;
-      margin: 30px auto;
-      position: relative;
-    }
-    .voucher-title {
-      font-size: 2.8em;
-      font-weight: bold;
-      color: #00ffea;
-      text-shadow: 2px 2px 0 #ff00cc, 4px 4px 10px #fff700;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-    .amount {
-      font-size: 4em;
-      font-weight: bold;
-      color: #ff00cc;
-      background: #fff700;
-      border-radius: 20px;
-      padding: 10px 30px;
-      margin: 20px 0;
-      box-shadow: 0 0 18px #00ffea;
-      display: inline-block;
-      transform: rotate(-6deg);
-    }
-    .desc {
-      font-size: 1.3em;
-      color: #3333ff;
-      background: #fffb00;
-      border-radius: 12px;
-      padding: 12px 18px;
-      margin: 24px 0;
-      display: inline-block;
-      box-shadow: 0 0 10px #ff00cc;
-      font-weight: bold;
-    }
-    .voucher-code {
-      font-size: 2em;
-      color: #00ffea;
-      background: #ff00cc;
-      border-radius: 12px;
-      padding: 6px 18px;
-      margin: 18px 0 10px 0;
-      display: inline-block;
-      font-family: monospace;
-      box-shadow: 0 0 8px #fff700;
-      letter-spacing: 3px;
-    }
-    .footer {
-      margin-top: 30px;
-      font-size: 1em;
-      color: #fff;
-      text-shadow: 1px 1px 2px #ff00cc;
-      background: rgba(51,51,255,0.5);
-      border-radius: 10px;
-      padding: 8px 12px;
-      display: inline-block;
-    }
-    /* Confetti animation for extra garishness */
-    @keyframes confetti {
-      0% {transform: translateY(-200px) rotate(0deg);}
-      100% {transform: translateY(700px) rotate(360deg);}
-    }
-    .confetti {
+    #canv {
+      display: block;
       position: absolute;
-      top: 0;
-      left: 50%;
-      width: 12px;
-      height: 24px;
-      background: #ff00cc;
-      opacity: 0.8;
-      border-radius: 4px;
-      animation: confetti 2.5s linear infinite;
+      top: 0; left: 0; width: 100vw; height: 100%;
+      z-index: 1;
+      pointer-events: none;
     }
-    .confetti:nth-child(2) { left: 20%; background: #00ffea; animation-delay: 0.2s;}
-    .confetti:nth-child(3) { left: 70%; background: #fff700; animation-delay: 0.5s;}
-    .confetti:nth-child(4) { left: 80%; background: #3333ff; animation-delay: 1s;}
-    .confetti:nth-child(5) { left: 30%; background: #00ff00; animation-delay: 1.5s;}
-    .confetti:nth-child(6) { left: 60%; background: #ff6600; animation-delay: 0.8s;}
-    .confetti:nth-child(7) { left: 40%; background: #ff00cc; animation-delay: 1.2s;}
+    .contact-content {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 2rem;
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.85);
+      border-radius: 16px;
+      margin-top: 100px;
+    }
   </style>
 </head>
 <body>
-  <div class="voucher-container">
-    <div class="confetti"></div>
-    <div class="confetti"></div>
-    <div class="confetti"></div>
-    <div class="confetti"></div>
-    <div class="confetti"></div>
-    <div class="confetti"></div>
-    <div class="confetti"></div>
-    <div class="voucher-title">HOLIDAY VOUCHER</div>
-    <div class="amount">£700</div>
-    <div class="desc">
-      Congratulations! Use this voucher to save £700 on your next unforgettable holiday.<br>
-      Valid for any destination, any time in 2026!
-    </div>
-    <div class="voucher-code">BASHY-81G-DICK</div>
-    <div class="footer">
-      <b>Terms & Conditions:</b> One-time use. Non-transferable. Non-refundable. <br>
-      Book by 31 December 2026. <br>
-      <span style="color:#fffb00;">Contact Garish Travel Co. for more info.</span>
+  <div id="contact-bg-wrapper">
+    <canvas id="canv"></canvas>
+    <div class="contact-content">
+      <h2>Contact Me</h2>
+      <p>This is the contact form overlaying the animated bird sky.</p>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
